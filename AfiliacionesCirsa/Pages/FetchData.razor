@@ -1,0 +1,61 @@
+﻿@page "/fetchdata"
+@using AfiliacionesCirsa.ViewModels
+@inject IFetchDataViewModel vm;
+
+<PageTitle>Weather forecast</PageTitle>
+<link href="css/app.css" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+<h1>Weather forecast</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+@if (vm.isBusy)
+{
+    <p>PENSANDO</p>
+    <div class="spinner-border" role="status">
+    </div>
+}
+
+@if (vm.clientesAfiliados == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (vm.clientesAfiliados.Count == 0){
+    <p><em>No tienes Clientes afiliados aun</em></p>
+}
+else
+{
+    @vm.current_user.NombreCompleto
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NombreCompleto</th>
+                <th>EmailAddress</th>
+                <th>Password</th>
+                <th>Afiliador_id</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var cliente in vm.clientesAfiliados)
+            {
+                <tr>
+                    <td>@cliente.NombreCompleto</td>
+                    <td>@cliente.EmailAddress</td>
+                    <td>@cliente.Password</td>
+                    <td>@cliente.Afiliador_id</td>
+                    <td>
+                        <button class="button is-info" @onclick="() => vm.verDetalle(3)">Visualizar</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+
+    protected override async Task OnInitializedAsync()
+    {
+        await vm.OnInitialize();
+    }
+
+}
