@@ -82,6 +82,7 @@ Es evidente que no teníamos una base de datos, pero nuestra intención era segu
 Estos servicios los hemos incorporado como "scoped", lo que implica que todo lo que realicemos durante una sesión sin reiniciar el navegador permanece activo. Sin embargo, al reiniciar el navegador se pierde toda esta información. Hemos encontrado que esta fue la mejor manera de simular el comportamiento de una base de datos. En estos servicios, mantenemos una lista con los objetos correspondientes que se cargan inicialmente para realizar pruebas. Las funciones de los servicios acceden a esta lista. En el caso de conectar una base de datos, simplemente tendríamos que dirigir las funciones de los servicios hacia la base de datos o hacia una API en lugar de utilizar esta lista almacenada en el servicio.
 
 En términos generales, esto nos permite que cada vez que se realiza una acción específica, como obtener los clientes afiliados a un usuario, se siga la misma ruta del servicio de Afiliaciones. Esto significa que, si conectáramos una base de datos, solo necesitaríamos configurar las pocas funciones de los servicios. El resto del frontend (ViewModel y View) no requeriría ninguna configuración adicional para seguir funcionando. Esta modularidad se basa en que la capa de servicio está completamente aislada. Por lo tanto, el ViewModel y la View funcionarán de la misma manera, ya sea que la capa de servicio obtenga datos de una base de datos o de una lista predeterminada.
+
 ### Decisiones Técnicas
 
 - **Decisión 1:** [Explicación y razón]
