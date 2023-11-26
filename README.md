@@ -2,10 +2,9 @@
 
 ## Background del Proyecto
 
-El proyecto CIRSA HIRING HACK - justCode tiene como objetivo proporcionar una posible web de afiliados para CIRSA. La idea principal
-será crear toda la parte visual de lo que podría ser. Surgió como respuesta a un reto planteado por parte de NUWE junto con CIRSA.
+El proyecto CIRSA HIRING HACK - justCode tiene como objetivo proporcionar una posible plataforma web de afiliados para CIRSA. Surgió como respuesta a un reto planteado por NUWE en colaboración con CIRSA.
 
-## Usage
+## Uso
 
 Para utilizar CIRSA HIRING HACK - justCode, sigue estos pasos simples:
 
@@ -36,15 +35,15 @@ En el desarrollo de CIRSA HIRING HACK - justCode, hemos utilizado las siguientes
 
 Durante el desarrollo, tomamos varias decisiones para optimizar el rendimiento y la experiencia del usuario. Algunas de las decisiones clave incluyen:
 
-- **Uso de Blazor:** Se eligió Blazor debido al reto que se nos proporcionó por parte de NUWE y CIRSA.
-- **Librerías Frontend:** Integración de Bulma, Bootstrap y Radzen para aprovechar sus características y facilitar el diseño y la interactividad. Así como dar importancia a la seguridad de la web de afiliación.
+- **Uso de Blazor:** Se eligió Blazor debido al reto proporcionado por NUWE y CIRSA.
+- **Librerías Frontend:** Optamos por integrar las librerías Bulma, Bootstrap y Radzen para aprovechar sus características y facilitar tanto el diseño como la interactividad de la plataforma. Además, la elección de estas librerías también está respaldada por consideraciones de seguridad para el usuario. Al utilizar estas bibliotecas, reducimos la posibilidad de introducir fallos de seguridad que podrían ocurrir si implementamos ciertas funcionalidades manualmente.
 
 ## Participantes
 
-Ambos participantes desarrollamos las diferentes páginas del proyecto. Pero se nos puede diferenciar por:
-- Alex Guimerà Garriga: Se centró más en la tratamiento de datos y estructura.
-- Albert Gómez Brugal: Se centró más en el diseño de la web y estructura.
-Cabe aclarar que aunque haya estas diferencias, ambos miembros han hecho una parte de todo cuando era necesario.
+Ambos participantes contribuyeron al desarrollo de las diferentes páginas del proyecto. Sin embargo, se pueden diferenciar por:
+- **Alex Guimerà Garriga:** Se enfocó más en el tratamiento de datos y la estructura.
+- **Albert Gómez Brugal:** Se centró más en el diseño de la web y la estructura.
+Es importante destacar que, a pesar de estas diferencias, ambos miembros realizaron tareas en todas las áreas cuando fue necesario.
 
 ## Contribuir
 
@@ -58,4 +57,4 @@ Cabe aclarar que aunque haya estas diferencias, ambos miembros han hecho una par
 
 ## Licencia
 
-Este proyecto está bajo la Licencia [Nombre de la Licencia]. Ver el archivo `LICENSE` para más detalles.
+Este proyecto está bajo la Licencia [Nombre de la Licencia]. Consulta el archivo `LICENSE` para obtener más detalles.
