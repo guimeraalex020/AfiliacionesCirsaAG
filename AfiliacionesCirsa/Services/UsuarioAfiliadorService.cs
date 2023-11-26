@@ -52,5 +52,28 @@ namespace AfiliacionesCirsa.Services
             return user;
         }
 
+        public async Task<UsuarioAfiliador?> GetUserByEmailAsync(string email)
+        {
+            await Task.Delay(5000);
+            var user = await Task.FromResult(ClientesAfiliados
+                .Where(usuario => usuario.EmailAddress == email)
+                .FirstOrDefault());
+
+            return user;
+        }
+
+        public void AddUser(string email, string password, string fullname)
+        {
+            var newUser = new UsuarioAfiliador
+            {
+                Id = ClientesAfiliados.Last().Id + 1,
+                NombreCompleto = fullname,
+                EmailAddress = email,
+                Password = password
+            };
+
+            ClientesAfiliados.Add(newUser);
+        }
+
     }
 }

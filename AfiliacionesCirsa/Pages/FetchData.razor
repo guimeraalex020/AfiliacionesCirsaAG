@@ -1,6 +1,8 @@
 ﻿@page "/fetchdata"
 @using AfiliacionesCirsa.ViewModels
 @inject IFetchDataViewModel vm;
+@inherits AuthorizationComponent
+
 
 <PageTitle>Weather forecast</PageTitle>
 <link href="css/app.css" rel="stylesheet"/>
@@ -52,10 +54,16 @@ else
     </table>
 }
 @code {
+    [CascadingParameter]
+    protected int current_user_id { get; set; }
+
 
     protected override async Task OnInitializedAsync()
     {
+        vm.current_user_id = current_user_id;
         await vm.OnInitialize();
     }
+
+    
 
 }
