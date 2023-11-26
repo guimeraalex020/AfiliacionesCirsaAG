@@ -16,6 +16,8 @@ namespace AfiliacionesCirsa.Models
         [StringLength(100)]
         public string Password { get; set; } = String.Empty;
 
+        [Required]
+        public string UrlAfiliacion { get; set; } = String.Empty;
 
     }
 }

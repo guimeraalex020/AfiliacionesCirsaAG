@@ -19,4 +19,5 @@ builder.Services.AddTransient<IRegisterViewModel, RegisterViewModel>();
 builder.Services.AddTransient<IHomePageViewModel, HomePageViewModel>();
 builder.Services.AddTransient<IProfileViewModel, ProfileViewModel>();
 builder.Services.AddTransient<IClienteSearchViewModel, ClienteSearchViewModel>();
+builder.Services.AddTransient<IDashboardViewModel,  DashboardViewModel>();
 await builder.Build().RunAsync();

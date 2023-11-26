@@ -1,6 +1,10 @@
 ﻿@page "/home"
 @using AfiliacionesCirsa.ViewModels
 @inherits AuthorizationComponent
+@inject IDashboardViewModel vm;
+<!-- Inyectamos el runtime de js para poder hacer que el boton copie -->
+@inject IJSRuntime JSRuntime
+
 <link rel="stylesheet" href="/css/navbar.css" />
 
 <PageTitle>Dashboard</PageTitle>
@@ -24,20 +28,20 @@
                             <p class="title is-3 ">Tu URL de afiliado</p>
                             <div class="field is-grouped">
                                 <div class="row">
-                                    <div class="col-md-6 col-sm-12 mb-2">
-                                    <p class="control is-expanded">
-                                        <input class="input" type="text" value="" readonly>
-                                    </p>
+                                    <div class="col-md-11 col-sm-12 mb-2">
+                                        <p class="control is-expanded">
+                                            <input id="urlInput" class="input" type="text" @bind-value="vm.url_afiliacion" readonly>
+                                        </p>
+                                    </div>
+                                    <div class="col-md-1 col-sm-12">
+                                        <p class="control">
+                                            <a class="button yellowbutton" @onclick="CopiarTexto">
+                                                Copiar
+                                            </a>
+                                            <i class="content_copy"></i>
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="col-md-6 col-sm-12">
-                                    <p class="control">
-                                        <a class="button yellowbutton">
-                                            Copiar
-                                        </a>
-                                        <i class="content_copy"></i>
-                                    </p>
-                                </div>
-                            </div>
                             </div>
                             <p class="subtitle is-4">Copia esta url y enviaselo a tus potenciales clientes!</p>
                         </div>
@@ -46,28 +50,28 @@
 
                 <div class="col-12 col-md-3 mb-3">
                         <div class="box bluebox ">
-                            <p class="title is-3 black-text">500€</p>
-                            <p class="subtitle is-5 black-text">Comision total          </p>
+                            <p class="title is-3 black-text">@vm.total_money €</p>
+                            <p class="subtitle is-5 black-text">Comision total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-3 mb-3">
                         <div class="box greenbox ">
-                            <p class="title is-3 black-text">50€</p>
-                            <p class="subtitle is-5 black-text">Media de comision mensual</p>
+                            <p class="title is-3 black-text">@vm.average_money €</p>
+                            <p class="subtitle is-5 black-text">Media de comision mensual&nbsp;&nbsp;&nbsp;</p>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-3 mb-3">
                         <div class="box yellowbox ">
-                            <p class="title is-3 black-text">50</p>
-                            <p class="subtitle is-5 black-text">Afiliados totales         </p>
+                            <p class="title is-3 black-text">@vm.total_clients </p>
+                            <p class="subtitle is-5 black-text">Afiliados totales&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;         </p>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-3 mb-3">
                         <div class="box redbox ">
-                            <p class="title is-3 black-text ">25</p>
+                            <p class="title is-3 black-text ">@vm.average_clients</p>
                             <p class="subtitle is-5 black-text">Media de afiliación mensual</p>
                     </div>
                 </div>
@@ -82,4 +86,15 @@
 </div>
 
 @code {
+    protected override async Task OnInitializedAsync()
+    {
+        await vm.OnInitialize();
+    }
+
+    private async Task CopiarTexto()
+    {
+        // Accede al elemento input por su id y copia su valor al portapapeles
+        await JSRuntime.InvokeVoidAsync("navigator.clipboard.writeText", vm.url_afiliacion);
+    }
+
 }

@@ -25,8 +25,14 @@ namespace AfiliacionesCirsa.Services
 
             // Agregar 10 objetos UsuarioAfiliador a UsuariosAfiliadores
             Random random = new Random();
+            DateTime fechaActual = DateTime.Now;
+            DateTime fechaMinima = fechaActual.AddYears(-2); // Hace dos años a partir de hoy
+
             for (int i = 0; i < 10000; i++)
             {
+                int diasAleatorios = random.Next((fechaActual - fechaMinima).Days); // Rango de días entre hace dos años y hoy
+                DateTime fechaAleatoria = fechaActual.AddDays(-diasAleatorios); // Fecha aleatoria dentro del rango
+
                 ClientesAfiliados.Add(new ClienteAfiliado
                 {
                     Id = i,
@@ -34,8 +40,9 @@ namespace AfiliacionesCirsa.Services
                     EmailAddress = $"usuario{i + 1}@example.com",
                     Password = $"Password{i + 1}", // Generar hash para la contraseña,
                     Afiliador_id = random.Next(0, 10),
-                    TotalSpent = random.Next(0,30)
-            });
+                    TotalSpent = random.Next(0, 30),
+                    TimeCreated = fechaAleatoria
+                });
             }
         }
 
