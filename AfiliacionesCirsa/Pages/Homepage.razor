@@ -1,6 +1,6 @@
 ﻿@page "/homepage"
 
-<RadzenLayout Style="background-color: var(--bg-grey); -ms-align-content: center; overflow: auto;">
+<RadzenLayout Style="background-color: var(--bg-grey); -ms-align-content: center; overflow: auto; overflow-x: hidden !important;">
     <HomeNavbar />
 
     <div class="main-container">
@@ -14,7 +14,7 @@
         </div>
 
         <div class="explanation-container">
-            <h2 style="color: black; margin-left: 20px;">Welcome to Cirsa affiliates program</h2>
+            <h2 style="color: black;">Welcome to Cirsa affiliates program</h2>
             <p style="color: black; margin-left: 20px;">Explore one of the most expansive affiliate marketing initiatives globally with the Cirsa Affiliates Program. Empowering content creators, publishers, and bloggers, this program enables them to capitalize on their audience traffic. With a diverse array of products and offerings within Cirsa, affiliates leverage user-friendly link-building tools to guide their audience toward endorsed choices, earning rewards from eligible transactions and programs.</p>
         </div>
 
@@ -38,16 +38,36 @@
                 </tr>
             </table>
         </div>
+        <div class="card-container">
+            <HomeCard />
+        </div>
 
+        <div class="footer-container">
+            <Footer />
+        </div>
     </div>
 
     <style>
+        .RadzenLayout::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .RadzenLayout {
+            scrollbar-width: thin;
+        }
+
+            .RadzenLayout::-webkit-scrollbar-thumb {
+                background-color: var(--bg-grey);
+                border-radius: 4px;
+            }
+
         .main-container {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: flex-start;
             text-align: center;
+            width: 100vw;
         }
 
         .home-container {
@@ -56,7 +76,7 @@
             background-size: cover;
             background-position: top center;
             background-repeat: no-repeat;
-            width: 100vw;
+            width: 100%;
             height: 60vh; /* Ajusta esta altura según tus necesidades */
             text-align: center;
             display: flex;
@@ -81,21 +101,20 @@
             }
 
         .explanation-container {
-            margin-top: 75px;
-            margin-left: 20px;
-            margin-bottom: 75px;
+            width: 80%;
+            margin-top: 175px !important;
+            margin: auto;
             text-align: left;
         }
 
         .table-container {
             width: 80%;
-            margin-top: 75px;
+            margin-top: 175px !important;
             margin: auto;
             overflow-x: auto; /* Añadido para manejar barras de desplazamiento horizontal si es necesario */
         }
 
         table {
-            
             width: 100%;
             border-radius: 10px; /* Bordes redondeados */
         }
@@ -117,14 +136,20 @@
             min-height: 64px;
         }
 
+        .card-container {
+            width: 100%;
+            margin-top: 75px !important;
+            margin: auto;
+        }
+
+        .footer-container {
+            width: 100%;
+            margin-top: 75px !important;
+        }
+
     </style>
 
 </RadzenLayout>
-
-
-
-
-
 
 
 
