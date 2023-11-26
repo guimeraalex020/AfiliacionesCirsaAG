@@ -3,14 +3,13 @@
 @inject IProfileViewModel vm;
 @inherits AuthorizationComponent
 
-<PageTitle>SETTINGS</PageTitle>
+<PageTitle>Configuración</PageTitle>
 
 <div class="container">
     <div class="row">
         <div class="col-12">
             <div class="titlediv">
-                <h4 class="title is-4">SETTINGS
-
+                <h4 class="title is-4">Configuración
                 </h4>
 
             </div>
@@ -28,6 +27,8 @@
                 }
                 else
                 {
+                    
+                    
                     <p>Aquí puedes configurar tus preferencias:</p>
                     @vm.my_user.NombreCompleto
                     @vm.my_user.TimeCreated

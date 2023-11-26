@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Components.Routing;
 namespace AfiliacionesCirsa.ViewModels 
 { 
 
-    public interface IFetchDataViewModel
+    public interface IRecentClientsViewModel
     {
         bool isBusy { get; set; }
         Task OnInitialize();
@@ -15,7 +15,7 @@ namespace AfiliacionesCirsa.ViewModels
 
     }
 
-    public class FetchDataViewModel : IFetchDataViewModel
+    public class RecentClientsViewModel : IRecentClientsViewModel
     {
         public List<ClienteAfiliado>? clientesAfiliados { get; set; }
         public bool isBusy { get; set; } = false;
@@ -24,7 +24,7 @@ namespace AfiliacionesCirsa.ViewModels
         private UsuarioAfiliadorService _usuarioAfiliadorService;
         private AuthService _authService;
         private readonly NavigationManager _navManager;
-        public FetchDataViewModel(AuthService authService, UsuarioAfiliadorService usuarioAfiliadorService, ClienteAfiliadoService clienteAfiliadoService, NavigationManager navManager)
+        public RecentClientsViewModel(AuthService authService, UsuarioAfiliadorService usuarioAfiliadorService, ClienteAfiliadoService clienteAfiliadoService, NavigationManager navManager)
         {
             _navManager = navManager;
             _usuarioAfiliadorService = usuarioAfiliadorService;
@@ -38,7 +38,8 @@ namespace AfiliacionesCirsa.ViewModels
             isBusy = true;
             if (_authService.user_id.HasValue)
             {
-                clientesAfiliados = await _clienteAfiliadoService.GetAfiliadosByAfiliadorIdAsync(_authService.user_id.Value);
+                var clientes = await (_clienteAfiliadoService.GetAfiliadosByAfiliadorIdAsync(_authService.user_id.Value));
+                clientesAfiliados = clientes.GetRange(0,10);
             }
             else
             {

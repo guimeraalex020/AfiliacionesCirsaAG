@@ -1,6 +1,6 @@
 ﻿@page "/clientTable"
 @using AfiliacionesCirsa.ViewModels
-@inject IFetchDataViewModel vm;
+@inject IRecentClientsViewModel vm;
 @inherits AuthorizationComponent
 <link rel="stylesheet" href="navbar.css" />
 
@@ -10,7 +10,7 @@
     <div class="row">
         <div class="col-12">
             <div class="titlediv">
-                <h4 class="title is-4">Tus afiliaciones mas recientes</h4>
+                <h4 class="title is-4">Tus 10 afiliaciones mas recientes</h4>
 
             </div>
         </div>
