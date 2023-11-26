@@ -8,4 +8,8 @@
     --primary-button: #eab730;
     --secondary-button: #b88d29;
     --dark-yellow: #aa8128;
+    /* SIDEBAR */
+    --rz-primary-lighter: rgba(234, 183, 48, 0.12) !important;
+    --rz-panel-menu-item-active-color: #b88d29 !important;
+    --rz-secondary :#aa8128  !important;
 }

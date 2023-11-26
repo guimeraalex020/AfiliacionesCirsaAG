@@ -16,3 +16,22 @@
     background-color: var(--dark-black);
     color: white; /* Cambia el color del texto si es necesario */
 }
+
+
+/* FETCH DATA*/
+.titlediv {
+    background-color: white; /* Fondo blanco */
+    margin: 10px; /* Margen en todos los lados */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    overflow-x: auto; /* Permite desplazamiento horizontal si el contenido es más ancho que el contenedor */
+    max-width: 100%;
+}
+
+.yellowbutton {
+    background-color: #f1bf32;
+}
+
+.filterinput {
+    border: 1px solid #aa8128 !important;
+}

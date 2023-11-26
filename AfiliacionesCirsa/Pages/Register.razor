@@ -1,16 +1,17 @@
-﻿@page "/login"
+﻿
+@page "/register"
 @using AfiliacionesCirsa.ViewModels
-@inject ILoginViewModel vm;
+@inject IRegisterViewModel vm;
 
 
-<PageTitle>LOGIN</PageTitle>
+<PageTitle>REGISTER</PageTitle>
 
-<h1>Hello, world! THIS IS THE LOGIN</h1>
+<h1>Hello, world! THIS IS THE REGISTER</h1>
 Welcome to your new app.
 
 <h3>Iniciar Sesión</h3>
 
-<EditForm Model="@vm" OnValidSubmit=@(()=>vm.Login())>
+<EditForm Model="@vm" OnValidSubmit=@(()=>vm.Register())>
     <DataAnnotationsValidator />
     <div class="form-group">
         <label>Nombre de Usuario:</label>

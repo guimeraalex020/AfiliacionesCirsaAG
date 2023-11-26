@@ -1,0 +1,28 @@
+﻿
+@page "/"
+@using AfiliacionesCirsa.ViewModels
+@inject IHomePageViewModel vm;
+
+
+<PageTitle>PAGINA PRINCIPAL</PageTitle>
+
+<h1>Hello, world! THIS IS THE HOMEPAGE</h1>
+Welcome to your new app.
+
+<button onclick="@(()=>vm.goRegister())"> REGISTRATE AQUI</button>
+<button onclick="@(()=>vm.goLogin())">LOGIN AQUI</button>
+
+@if (vm.isBusy)
+{
+    <p>LOADING......</p>
+}
+
+@code {
+
+    //Login=@(args => vm.Login(args.Username, args.Password))
+    protected override void OnInitialized()
+    {
+        vm.OnInitialize();
+    }
+
+}

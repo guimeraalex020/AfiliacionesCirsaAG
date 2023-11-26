@@ -1,0 +1,26 @@
+﻿@page "/settings"
+@using AfiliacionesCirsa.ViewModels
+@inject IProfileViewModel vm;
+@inherits AuthorizationComponent
+
+<h3>Opciones de Configuración</h3>
+
+@if (vm.isBusy)
+{
+    <p>LOADING....</p>
+}
+else{
+<p>Aquí puedes configurar tus preferencias:</p>
+@vm.my_user.NombreCompleto
+@vm.my_user.TimeCreated
+@vm.my_user.EmailAddress
+@vm.my_user.Id
+@vm.my_user.Password}
+<!-- Agrega elementos de configuración -->
+@code {
+    // Agregar lógica para manejar las opciones de configuración
+    protected override async Task OnInitializedAsync()
+    {
+        await vm.OnInitialize();
+    }
+}

@@ -2,65 +2,73 @@
 @using AfiliacionesCirsa.ViewModels
 @inject IFetchDataViewModel vm;
 @inherits AuthorizationComponent
-
+<link rel="stylesheet" href="navbar.css" />
 
 <PageTitle>Weather forecast</PageTitle>
-<link href="css/app.css" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
-<h1>Weather forecast</h1>
 
-<p>This component demonstrates fetching data from the server.</p>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="titlediv">
+                <h4 class="title is-4">Tus usuarios afiliados</h4>
 
-@if (vm.isBusy)
-{
-    <p>PENSANDO</p>
-    <div class="spinner-border" role="status">
+            </div>
+        </div>
     </div>
-}
-
-@if (vm.clientesAfiliados == null)
-{
-    <p><em>Loading...</em></p>
-}
-else if (vm.clientesAfiliados.Count == 0){
-    <p><em>No tienes Clientes afiliados aun</em></p>
-}
-else
-{
-    @vm.current_user.NombreCompleto
-    <table class="table">
-        <thead>
-            <tr>
-                <th>NombreCompleto</th>
-                <th>EmailAddress</th>
-                <th>Password</th>
-                <th>Afiliador_id</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var cliente in vm.clientesAfiliados)
+    <div class="row">
+        <div class="col-12">
+            <div class="titlediv">
+            <!-- Contenido principal-->
+            @if (vm.isBusy)
             {
-                <tr>
-                    <td>@cliente.NombreCompleto</td>
-                    <td>@cliente.EmailAddress</td>
-                    <td>@cliente.Password</td>
-                    <td>@cliente.Afiliador_id</td>
-                    <td>
-                        <button class="button is-info" @onclick="() => vm.verDetalle(3)">Visualizar</button>
-                    </td>
-                </tr>
+                <p>PENSANDO</p>
+                <div class="spinner-border" role="status">
+                </div>
             }
-        </tbody>
-    </table>
-}
+            @if (vm.clientesAfiliados == null)
+            {
+                <p><em>Loading...</em></p>
+            }
+            else if (vm.clientesAfiliados.Count == 0)
+            {
+                <p><em>No tienes Clientes afiliados aun</em></p>
+            }
+            else
+            {
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>NombreCompleto</th>
+                            <th>EmailAddress</th>
+                            <th>Fecha Afiliacion</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var cliente in vm.clientesAfiliados)
+                        {
+                            <tr>
+                                <td>@cliente.NombreCompleto</td>
+                                <td>@cliente.EmailAddress</td>
+                                <td>@cliente.TimeCreated</td>
+                                <td>
+                                        <button class="button yellowbutton" @onclick="() => vm.verDetalle(3)">Visualizar</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            </div>
+        </div>
+    </div>
+</div>
+
 @code {
-    [CascadingParameter]
-    protected int current_user_id { get; set; }
 
 
     protected override async Task OnInitializedAsync()
     {
-        vm.current_user_id = current_user_id;
         await vm.OnInitialize();
     }
 
