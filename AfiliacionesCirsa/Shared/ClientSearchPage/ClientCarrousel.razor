@@ -18,7 +18,7 @@
                     <b>@(order.EmailAddress)</b>
                 </RadzenColumn>
                 <RadzenColumn Size="4" Class="rz-text-align-end">
-                    <RadzenBadge BadgeStyle="BadgeStyle.Secondary" Text=@($"{String.Format(new System.Globalization.CultureInfo("es-EU"), "{0:C}", order.Afiliador_id)}") />
+                    <RadzenBadge BadgeStyle="BadgeStyle.Secondary" Text=@($"{String.Format(new System.Globalization.CultureInfo("es-EU"), "{0:C}", order.TotalSpent)}") />
 
                 </RadzenColumn>
             </RadzenRow>

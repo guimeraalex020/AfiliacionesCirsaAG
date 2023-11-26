@@ -37,7 +37,7 @@ namespace AfiliacionesCirsa.ViewModels
         {
             if (!isAllowed())
             {
-                _navManager.NavigateTo("/fetchdata");
+                _navManager.NavigateTo("/home");
             }
         }
 

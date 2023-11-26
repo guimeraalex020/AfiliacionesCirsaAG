@@ -1,14 +1,16 @@
-﻿@page "/homepage"
+﻿@page "/"
+@using AfiliacionesCirsa.ViewModels
+@inject IHomePageViewModel vm;
 
 <RadzenLayout Style="background-color: var(--bg-grey); -ms-align-content: center; overflow: auto; overflow-x: hidden !important;">
-    <HomeNavbar />
+    <HomeNavbar VM="@vm" />
 
     <div class="main-container">
 
         <div class="home-container">
             <div class="text-overlay">
                 <p style="color: white; font-weight: bolder; font-size: 48px; margin: 0;">Recommend and Earn with Cirsa</p>
-                <RadzenButton Text="SIGNIN" Style="background-color: black; color: white; margin-top: 40px; height: 35px;" />
+                <RadzenButton Click="@(()=>vm.goRegister())" Text="SIGNIN" Style="background-color: black; color: white; margin-top: 40px; height: 35px;" />
             </div>
 
         </div>
@@ -39,7 +41,7 @@
             </table>
         </div>
         <div class="card-container">
-            <HomeCard />
+            <HomeCard VM="@vm" />
         </div>
 
         <div class="footer-container">

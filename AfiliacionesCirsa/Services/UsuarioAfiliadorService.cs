@@ -1,5 +1,4 @@
 ﻿using System;
-using static AfiliacionesCirsa.Pages.FetchData;
 using static System.Net.WebRequestMethods;
 using System;
 using System.IO;

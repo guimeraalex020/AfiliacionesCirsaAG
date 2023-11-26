@@ -54,7 +54,7 @@ namespace AfiliacionesCirsa.ViewModels
                 await _authService.Login(email, password);
                 if (_authService.isLogged == true)
                 {
-                    _navManager.NavigateTo("/fetchdata");
+                    _navManager.NavigateTo("/home");
                 }
                 else
                 {
