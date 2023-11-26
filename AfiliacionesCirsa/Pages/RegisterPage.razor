@@ -1,4 +1,4 @@
-﻿@page "/loginPage"
+﻿@page "/registerPage"
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,7 +19,7 @@
 						<div class="login-wrap p-4 p-md-5">
 							<div class="d-flex">
 								<div class="w-100">
-									<h3 class="mb-4">Sign In</h3>
+									<h3 class="mb-4">Sign Up</h3>
 								</div>
 								<div class="w-100">
 									<p class="social-media d-flex justify-content-end">
@@ -36,22 +36,31 @@
 									</p>
 								</div>
 							</div>
-							<EditForm Model="@loginModel" OnValidSubmit="HandleValidSubmit">
+							<EditForm Model="@user" OnValidSubmit="HandleValidSubmit">
 								<DataAnnotationsValidator />
 
 								<div class="form-group mb-3">
 									<label class="label" for="email">Email:</label>
-									<InputText id="email" @bind-Value="loginModel.Email" class="form-control" />
-									<ValidationMessage For="@(() => loginModel.Email)" />
+									<InputText id="email" @bind-Value="user.Email" class="form-control" />
+									<ValidationMessage For="@(() => user.Email)" />
 								</div>
 
 								<div class="form-group mb-3">
 									<label class="label" for="password">Password:</label>
-									<InputText id="password" @bind-Value="loginModel.Password" type="password" class="form-control" />
+									<InputText id="password" @bind-Value="user.Password" type="password" class="form-control" />
+								</div>
+
+								<div class="form-group mb-3">
+									<label class="label" for="confirmPassword">Confirm Password:</label>
+									<InputText id="confirmPassword" @bind-Value="confirmPassword" type="password" class="form-control" />
+									@if (!string.IsNullOrEmpty(passwordMismatchError))
+									{
+										<p class="text-danger">@passwordMismatchError</p>
+									}
 								</div>
 
 								<div class="form-group">
-									<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+									<button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign Up</button>
 								</div>
 
 								<div class="form-group d-md-flex">
@@ -62,39 +71,40 @@
 											<span class="checkmark"></span>
 										</label>
 									</div>
-									<div class="w-50 text-md-right">
-										<a href="#">Forgot Password</a>
-									</div>
 								</div>
 							</EditForm>
-							<p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
-
-
 </body>
 </html>
 
 @code {
-	private LoginModel loginModel = new LoginModel();
+	private User user = new User();
+	private string confirmPassword = "";
+	private string passwordMismatchError = "";
 
 	private void HandleValidSubmit()
 	{
-		// Aquí puedes agregar la lógica de autenticación según tus necesidades
-		// Por ahora, simplemente imprimimos los valores en la consola
-		Console.WriteLine($"Email: {loginModel.Email}, Password: {loginModel.Password}");
+		if (user.Password != confirmPassword)
+		{
+			passwordMismatchError = "Passwords do not match";
+		}
+		else
+		{
+			// Lógica para procesar el formulario cuando las contraseñas coinciden
+			// Puedes redirigir, enviar datos al servidor, etc.
+			passwordMismatchError = ""; // Limpiar el mensaje de error si las contraseñas coinciden
+		}
 	}
 
-	private class LoginModel
+	private class User
 	{
 		[System.ComponentModel.DataAnnotations.EmailAddress(ErrorMessage = "Invalid email address")]
 		public string Email { get; set; }
-
 		public string Password { get; set; }
 	}
 }
