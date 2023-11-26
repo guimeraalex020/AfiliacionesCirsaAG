@@ -1,0 +1,65 @@
+﻿@using System.Collections.ObjectModel
+
+<RadzenDataList WrapItems="true" AllowPaging="false" Data="@clientesOnDisplay" TItem="ClienteAfiliado">
+    <Template Context="order">
+        <RadzenCard Style="width:300px;">
+            <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center">
+                <RadzenImage Path="https://ceslava.s3-accelerate.amazonaws.com/2016/04/mistery-man-gravatar-wordpress-avatar-persona-misteriosa-510x510.png" Style="width: 80px; height: 80px; border-radius: 50%" />
+                <RadzenStack Gap="0">
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-2 rz-my-0">Nombre y apellido</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1"><b>@(order.NombreCompleto)</b></RadzenText>
+                    <RadzenText TextStyle="TextStyle.Overline" class="rz-display-flex rz-mt-4 rz-mb-0">Fecha de afiliación</RadzenText>
+                    <RadzenText TextStyle="TextStyle.Body1"><b>@(order.TimeCreated)</b></RadzenText>
+                </RadzenStack>
+            </RadzenStack>
+            <hr style="border: none; background-color: rgba(0,0,0,.2); height: 1px; margin: 1rem 0;" />
+            <RadzenRow>
+                <RadzenColumn Size="8" Class="rz-text-truncate">
+                    <b>@(order.EmailAddress)</b>
+                </RadzenColumn>
+                <RadzenColumn Size="4" Class="rz-text-align-end">
+                    <RadzenBadge BadgeStyle="BadgeStyle.Secondary" Text=@($"{String.Format(new System.Globalization.CultureInfo("es-EU"), "{0:C}", order.Afiliador_id)}") />
+
+                </RadzenColumn>
+            </RadzenRow>
+        </RadzenCard>
+    </Template>
+</RadzenDataList>
+
+<RadzenPager ShowPagingSummary="true" PagingSummaryFormat="@pagingSummaryFormat" HorizontalAlign="HorizontalAlign.Right" Count="@count" PageSize="@clientXpage" PageNumbersCount="@numPages" PageChanged="@PageChanged"></RadzenPager>
+@code {
+    [Parameter]
+    public ObservableCollection<ClienteAfiliado> Clientes { get; set; } = new ObservableCollection<ClienteAfiliado>();
+
+    private List<ClienteAfiliado> clientesOnDisplay = new List<ClienteAfiliado>();
+
+    string pagingSummaryFormat = "Displaying page {0} of {1} (total {2} records)";
+    int count = 0;
+    int numPages = 0;
+    int clientXpage = 6;
+    protected override async Task OnInitializedAsync()
+    {
+        count = Clientes.Count();
+        numPages = count / clientXpage;
+        getPage(0);
+        await base.OnInitializedAsync();
+    }
+
+    void PageChanged(PagerEventArgs args)
+    {
+        getPage(args.Skip);
+    }
+
+    private void getPage(int skip)
+    {
+        clientesOnDisplay=Clientes.Skip(skip).Take(clientXpage).ToList();
+    }
+
+    protected override void OnParametersSet()
+    {
+        count = Clientes.Count();
+        numPages = count / clientXpage;
+        getPage(0);
+    }
+
+}

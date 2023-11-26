@@ -95,3 +95,7 @@ a, .btn-link {
         -webkit-transform: rotate(360deg);
     }
 }
+
+.rz-body {
+    background-color:#e1e1e1 !important;
+}

@@ -11,18 +11,14 @@ namespace AfiliacionesCirsa.ViewModels
         bool isBusy { get; set; }
         Task OnInitialize();
         void verDetalle(int parametro);
-        int current_user_id { set; }
-        UsuarioAfiliador current_user { get; set; }
         List<ClienteAfiliado>? clientesAfiliados {  get; set; }
 
     }
 
     public class FetchDataViewModel : IFetchDataViewModel
     {
-        public UsuarioAfiliador current_user { get; set; } = new UsuarioAfiliador();
         public List<ClienteAfiliado>? clientesAfiliados { get; set; }
         public bool isBusy { get; set; } = false;
-        public int current_user_id { set; get;  }
 
         private ClienteAfiliadoService _clienteAfiliadoService;
         private UsuarioAfiliadorService _usuarioAfiliadorService;
@@ -40,10 +36,18 @@ namespace AfiliacionesCirsa.ViewModels
         public async Task OnInitialize()
         {
             isBusy = true;
-            current_user = await _usuarioAfiliadorService.GetUserByIdAsync(current_user_id);
-            clientesAfiliados = await _clienteAfiliadoService.GetAfiliadosByAfiliadorIdAsync(current_user_id);
+            if (_authService.user_id.HasValue)
+            {
+                clientesAfiliados = await _clienteAfiliadoService.GetAfiliadosByAfiliadorIdAsync(_authService.user_id.Value);
+            }
+            else
+            {
+                throw new NullReferenceException("User id on auth service is null");
+            }
+
+
             isBusy = false;
-            
+
         }
 
 

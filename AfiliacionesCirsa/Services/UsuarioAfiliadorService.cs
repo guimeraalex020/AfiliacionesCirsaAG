@@ -43,7 +43,6 @@ namespace AfiliacionesCirsa.Services
 
         public async Task<UsuarioAfiliador> GetUserByIdAsync(int user_id)
         {
-            await Task.Delay(5000);
             var user = await Task.FromResult(ClientesAfiliados
                 .Where(usuario => usuario.Id == user_id)
                 .FirstOrDefault());
@@ -54,7 +53,6 @@ namespace AfiliacionesCirsa.Services
 
         public async Task<UsuarioAfiliador?> GetUserByEmailAsync(string email)
         {
-            await Task.Delay(5000);
             var user = await Task.FromResult(ClientesAfiliados
                 .Where(usuario => usuario.EmailAddress == email)
                 .FirstOrDefault());
