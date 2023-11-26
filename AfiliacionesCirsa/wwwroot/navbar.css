@@ -1,5 +1,10 @@
 ﻿@import 'colors.css';
 
+.custom-home-header {
+    background-color: var(--strong-yellow);
+    color: black;
+}
+
 .custom-header {
     background-color: var(--dark-black);
     color: white;
@@ -16,3 +21,4 @@
     background-color: var(--dark-black);
     color: white; /* Cambia el color del texto si es necesario */
 }
+
