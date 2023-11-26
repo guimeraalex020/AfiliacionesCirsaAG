@@ -45,15 +45,31 @@ Ambos participantes contribuyeron al desarrollo de las diferentes páginas del p
 - **Albert Gómez Brugal:** Se centró más en el diseño de la web y la estructura.
 Es importante destacar que, a pesar de estas diferencias, ambos miembros realizaron tareas en todas las áreas cuando fue necesario.
 
-## Contribuir
+## Detalles de Desarrollo
 
-¡Apreciamos las contribuciones! Si deseas contribuir a CIRSA HIRING HACK - justCode, sigue estos pasos:
+En esta sección, proporcionaré detalles específicos sobre el desarrollo del proyecto, destacando aspectos como las funcionalidades implementadas, la arquitectura, las decisiones técnicas y cualquier complicación que haya surgido durante el proceso.
 
-1. Haz un fork del repositorio.
-2. Crea una nueva rama: `git checkout -b nueva-caracteristica`.
-3. Realiza tus cambios y realiza un commit: `git commit -m 'Añade nueva característica'`.
-4. Haz push a la rama: `git push origin nueva-caracteristica`.
-5. Crea una nueva solicitud de extracción.
+### Funcionalidades Implementadas
+
+- [Descripción de la funcionalidad 1]
+- [Descripción de la funcionalidad 2]
+- ...
+
+### Arquitectura
+
+Descripción de la arquitectura general del proyecto, cómo se estructuran los componentes, etc.
+
+### Decisiones Técnicas
+
+- **Decisión 1:** [Explicación y razón]
+- **Decisión 2:** [Explicación y razón]
+- ...
+
+### Complicaciones y Soluciones
+
+- **Complicación 1:** [Descripción de la complicación y cómo se abordó]
+- **Complicación 2:** [Descripción de la complicación y cómo se abordó]
+- ...
 
 ## Licencia
 
