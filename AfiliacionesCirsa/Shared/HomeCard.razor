@@ -17,12 +17,18 @@
                 <div style="text-align: center;">
                     <RadzenText Style="margin-top: 30%; font-size: 36px;" TextStyle="TextStyle.Overline">Recommend and Earn with Cirsa</RadzenText>
                     <br />
-                    <RadzenButton Text="SIGNIN" Style="background-color: black; color: white; margin-top: 40px; height: 35px;" />
+                    <RadzenButton  Click="@(()=>VM.goRegister())" Text="SIGNIN" Style="background-color: black; color: white; margin-top: 40px; height: 35px;" />
                 </div>
             </RadzenStack>
         </RadzenStack>
     </RadzenCard>
 </div>
 
+@code {
+    [Parameter]
+    public IHomePageViewModel VM { get; set; }
 
+    bool sidebar1Expanded = true;
+
+}
 

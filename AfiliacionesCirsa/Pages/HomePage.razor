@@ -1,28 +1,160 @@
-﻿
-@page "/"
+﻿@page "/"
 @using AfiliacionesCirsa.ViewModels
 @inject IHomePageViewModel vm;
 
+<RadzenLayout Style="background-color: var(--bg-grey); -ms-align-content: center; overflow: auto; overflow-x: hidden !important;">
+    <HomeNavbar VM="@vm" />
 
-<PageTitle>PAGINA PRINCIPAL</PageTitle>
+    <div class="main-container">
 
-<h1>Hello, world! THIS IS THE HOMEPAGE</h1>
-Welcome to your new app.
+        <div class="home-container">
+            <div class="text-overlay">
+                <p style="color: white; font-weight: bolder; font-size: 48px; margin: 0;">Recommend and Earn with Cirsa</p>
+                <RadzenButton Click="@(()=>vm.goRegister())" Text="SIGNIN" Style="background-color: black; color: white; margin-top: 40px; height: 35px;" />
+            </div>
 
-<button onclick="@(()=>vm.goRegister())"> REGISTRATE AQUI</button>
-<button onclick="@(()=>vm.goLogin())">LOGIN AQUI</button>
+        </div>
 
-@if (vm.isBusy)
-{
-    <p>LOADING......</p>
-}
+        <div class="explanation-container">
+            <h2 style="color: black;">Welcome to Cirsa affiliates program</h2>
+            <p style="color: black; margin-left: 20px;">Explore one of the most expansive affiliate marketing initiatives globally with the Cirsa Affiliates Program. Empowering content creators, publishers, and bloggers, this program enables them to capitalize on their audience traffic. With a diverse array of products and offerings within Cirsa, affiliates leverage user-friendly link-building tools to guide their audience toward endorsed choices, earning rewards from eligible transactions and programs.</p>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <td>
+                        <img class="responsive-img" src="https://img.icons8.com/external-bearicons-outline-color-bearicons/64/external-sign-up-call-to-action-bearicons-outline-color-bearicons-2.png" alt="external-sign-up-call-to-action-bearicons-outline-color-bearicons-2" />
+                    </td>
+                    <td>
+                        <img class="responsive-img" src="https://img.icons8.com/external-flatarticons-blue-flatarticons/65/000000/external-recommend-seo-flatarticons-blue-flatarticons.png" alt="external-recommend-seo-flatarticons-blue-flatarticons" />
+                    </td>
+                    <td>
+                        <img class="responsive-img" src="https://img.icons8.com/external-microdots-premium-microdot-graphic/64/external-earn-business-finance-vol1-microdots-premium-microdot-graphic.png" alt="external-earn-business-finance-vol1-microdots-premium-microdot-graphic" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Join the ranks of countless creators, publishers, and bloggers who are maximizing their earnings through the Cirsa Affiliates Program.</td>
+                    <td>Connect your audience with a myriad of products through our platform. Tailored linking tools are at your disposal, catering to the needs of large publishers, individual bloggers, and social media influencers.</td>
+                    <td>Gain associate commissions of up to 10% on qualifying purchases and programs. Benefit from our competitive conversion rates, optimizing your potential earnings.</td>
+                </tr>
+            </table>
+        </div>
+        <div class="card-container">
+            <HomeCard VM="@vm" />
+        </div>
+
+        <div class="footer-container">
+            <Footer />
+        </div>
+    </div>
+
+    <style>
+        .RadzenLayout::-webkit-scrollbar {
+            width: 0;
+        }
+
+        .RadzenLayout {
+            scrollbar-width: thin;
+        }
+
+            .RadzenLayout::-webkit-scrollbar-thumb {
+                background-color: var(--bg-grey);
+                border-radius: 4px;
+            }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            text-align: center;
+            width: 100vw;
+        }
+
+        .home-container {
+            position: relative;
+            background-image: url('/images/casino_valencia.jpg');
+            background-size: cover;
+            background-position: top center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 60vh; /* Ajusta esta altura según tus necesidades */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .home-container::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); /* Ajusta el valor alpha para controlar la opacidad */
+            }
+
+            .home-container .text-overlay {
+                position: relative;
+                z-index: 1; /* Asegura que el texto esté por encima del fondo oscuro */
+            }
+
+        .explanation-container {
+            width: 80%;
+            margin-top: 175px !important;
+            margin: auto;
+            text-align: left;
+        }
+
+        .table-container {
+            width: 80%;
+            margin-top: 175px !important;
+            margin: auto;
+            overflow-x: auto; /* Añadido para manejar barras de desplazamiento horizontal si es necesario */
+        }
+
+        table {
+            width: 100%;
+            border-radius: 10px; /* Bordes redondeados */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: justify-all;
+            border-radius: 8px; /* Bordes redondeados en las celdas */
+            background-color: #f2f2f2; /* Color de fondo */
+            border-collapse: separate;
+            border-spacing: 10px;
+        }
+
+        .responsive-img {
+            width: 20%;
+            min-width: 64px;
+            height: auto;
+            min-height: 64px;
+        }
+
+        .card-container {
+            width: 100%;
+            margin-top: 75px !important;
+            margin: auto;
+        }
+
+        .footer-container {
+            width: 100%;
+            margin-top: 75px !important;
+        }
+
+    </style>
+
+</RadzenLayout>
+
+
 
 @code {
-
-    //Login=@(args => vm.Login(args.Username, args.Password))
-    protected override void OnInitialized()
-    {
-        vm.OnInitialize();
-    }
 
 }

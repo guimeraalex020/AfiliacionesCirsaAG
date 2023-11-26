@@ -1,5 +1,4 @@
 ﻿using System;
-using static AfiliacionesCirsa.Pages.FetchData;
 using static System.Net.WebRequestMethods;
 using System;
 using System.IO;
@@ -34,7 +33,8 @@ namespace AfiliacionesCirsa.Services
                     NombreCompleto = $"Usuario {i + 1}",
                     EmailAddress = $"usuario{i + 1}@example.com",
                     Password = $"Password{i + 1}", // Generar hash para la contraseña,
-                    Afiliador_id = random.Next(0, 10)
+                    Afiliador_id = random.Next(0, 10),
+                    TotalSpent = random.Next(0,30)
             });
             }
         }
