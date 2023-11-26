@@ -1,0 +1,13 @@
+﻿@inject NavigationManager NavigationManager
+@inject AuthService authService;
+@code {
+
+    protected override void OnInitialized()
+    {
+        if (authService.isLogged==false)
+        {
+            NavigationManager.NavigateTo("/login");
+        }
+    }
+}
+
