@@ -13,7 +13,7 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddScoped<ClienteAfiliadoService>();
 builder.Services.AddScoped<UsuarioAfiliadorService>();
 builder.Services.AddScoped<AuthService>();
-builder.Services.AddTransient<IFetchDataViewModel, FetchDataViewModel>();
+builder.Services.AddTransient<IRecentClientsViewModel, RecentClientsViewModel>();
 builder.Services.AddTransient<ILoginViewModel, LoginViewModel>();
 builder.Services.AddTransient<IRegisterViewModel, RegisterViewModel>();
 builder.Services.AddTransient<IHomePageViewModel, HomePageViewModel>();

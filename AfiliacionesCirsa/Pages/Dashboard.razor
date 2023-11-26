@@ -1,7 +1,7 @@
 ﻿@page "/home"
 @using AfiliacionesCirsa.ViewModels
 @inherits AuthorizationComponent
-<link rel="stylesheet" href="navbar.css" />
+<link rel="stylesheet" href="/css/navbar.css" />
 
 <PageTitle>Dashboard</PageTitle>
 
@@ -14,13 +14,71 @@
             </div>
         </div>
     </div>
+
     <div class="row">
         <div class="col-12">
             <div class="titlediv">
-            HOLA AQUI TINDRAS LA DASHBOARD
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <div class="box">
+                            <p class="title is-3 ">Tu URL de afiliado</p>
+                            <div class="field is-grouped">
+                                <div class="row">
+                                    <div class="col-md-6 col-sm-12 mb-2">
+                                    <p class="control is-expanded">
+                                        <input class="input" type="text" value="" readonly>
+                                    </p>
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <p class="control">
+                                        <a class="button yellowbutton">
+                                            Copiar
+                                        </a>
+                                        <i class="content_copy"></i>
+                                    </p>
+                                </div>
+                            </div>
+                            </div>
+                            <p class="subtitle is-4">Copia esta url y enviaselo a tus potenciales clientes!</p>
+                        </div>
+                    </div>
+
+
+                <div class="col-12 col-md-3 mb-3">
+                        <div class="box bluebox ">
+                            <p class="title is-3 black-text">500€</p>
+                            <p class="subtitle is-5 black-text">Comision total          </p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-3 mb-3">
+                        <div class="box greenbox ">
+                            <p class="title is-3 black-text">50€</p>
+                            <p class="subtitle is-5 black-text">Media de comision mensual</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-3 mb-3">
+                        <div class="box yellowbox ">
+                            <p class="title is-3 black-text">50</p>
+                            <p class="subtitle is-5 black-text">Afiliados totales         </p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-3 mb-3">
+                        <div class="box redbox ">
+                            <p class="title is-3 black-text ">25</p>
+                            <p class="subtitle is-5 black-text">Media de afiliación mensual</p>
+                    </div>
+                </div>
+
+                </div>
+                
             </div>
         </div>
     </div>
+
+
 </div>
 
 @code {
