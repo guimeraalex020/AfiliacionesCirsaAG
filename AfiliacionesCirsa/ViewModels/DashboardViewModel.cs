@@ -14,6 +14,7 @@ namespace AfiliacionesCirsa.ViewModels
         int average_money { get; set; }
         int total_clients { get; set; }
         int average_clients { get; set; }
+        string url_afiliacion { get; set; }
 
 
     }
@@ -24,16 +25,19 @@ namespace AfiliacionesCirsa.ViewModels
         public int average_money { get; set; } = 0;
         public int total_clients { get; set; } = 0;
         public int average_clients { get; set; } = 0;
+        public string url_afiliacion { get; set; } = String.Empty;
         public bool isBusy { get; set; } = false;
 
         private ClienteAfiliadoService _clienteAfiliadoService;
+        private UsuarioAfiliadorService _usuarioAfiliadorService;
         private AuthService _authService;
         private readonly NavigationManager _navManager;
-        public DashboardViewModel(AuthService authService, ClienteAfiliadoService clienteAfiliadoService, NavigationManager navManager)
+        public DashboardViewModel(AuthService authService,UsuarioAfiliadorService usuarioAfiliadorService, ClienteAfiliadoService clienteAfiliadoService, NavigationManager navManager)
         {
             _navManager = navManager;
             _clienteAfiliadoService = clienteAfiliadoService;
             _authService = authService;
+            _usuarioAfiliadorService= usuarioAfiliadorService;
         }
 
 
@@ -42,10 +46,14 @@ namespace AfiliacionesCirsa.ViewModels
             isBusy = true;
             if (_authService.user_id.HasValue)
             {
-                total_money = 0;
-                average_money = 0;
-                total_clients = 0;
-                average_clients = 0;
+                var clientesList = await _clienteAfiliadoService.GetAfiliadosByAfiliadorIdAsync(_authService.user_id.Value);
+                var me = await _usuarioAfiliadorService.GetUserByIdAsync(_authService.user_id.Value);
+                var sumaTotalSpent = clientesList.Sum(cliente => cliente.TotalSpent);
+                total_money = sumaTotalSpent;
+                average_money = sumaTotalSpent / (CalcularMesesHastaHoy(me.TimeCreated));
+                total_clients = clientesList.Count();
+                average_clients = clientesList.Count() / (CalcularMesesHastaHoy(me.TimeCreated));
+                url_afiliacion = me.UrlAfiliacion;
             }
             else
             {
@@ -58,12 +66,14 @@ namespace AfiliacionesCirsa.ViewModels
         }
 
 
-        public void verDetalle(int parametro)
+
+        private static int CalcularMesesHastaHoy(DateTime fechaAlmacenada)
         {
-            _navManager.NavigateTo("/DataDetail/2");
+            DateTime fechaActual = DateTime.Today;
+            int diferenciaMeses = ((fechaActual.Year - fechaAlmacenada.Year) * 12) + fechaActual.Month - fechaAlmacenada.Month;
+            return diferenciaMeses;
         }
 
 
-        
     }
 }

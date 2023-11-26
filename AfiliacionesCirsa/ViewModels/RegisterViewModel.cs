@@ -44,7 +44,7 @@ namespace AfiliacionesCirsa.ViewModels
         {
             if (!isAllowed())
             {
-                _navManager.NavigateTo("/");
+                _navManager.NavigateTo("/home");
             }
         }
 
@@ -67,7 +67,7 @@ namespace AfiliacionesCirsa.ViewModels
 
             else
             {
-                _navManager.NavigateTo("/");
+                _navManager.NavigateTo("/home");
             }
         }
 

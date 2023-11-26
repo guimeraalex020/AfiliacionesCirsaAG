@@ -19,9 +19,13 @@ namespace AfiliacionesCirsa.Services
 
         public void LoadInitialData()
         {
-            // ... Código previo para agregar objetos WeatherForecast
+            Random random = new Random();
+            DateTime fechaActual = DateTime.Now.AddMonths(-1);
+            DateTime fechaMinima = fechaActual.AddYears(-2);
 
-            // Agregar 10 objetos UsuarioAfiliador a UsuariosAfiliadores
+            int diasAleatorios = random.Next((fechaActual - fechaMinima).Days); // Rango de días entre hace dos años y hoy
+            DateTime fechaAleatoria = fechaActual.AddDays(-diasAleatorios); // Fecha aleatoria dentro del rango
+
             for (int i = 0; i < 10; i++)
             {
                 ClientesAfiliados.Add(new UsuarioAfiliador
@@ -29,7 +33,9 @@ namespace AfiliacionesCirsa.Services
                     Id = i,
                     NombreCompleto = $"Usuario {i + 1}",
                     EmailAddress = $"usuario{i + 1}@example.com",
-                    Password = $"Password{i + 1}" // Generar hash para la contraseña
+                    Password = $"Password{i + 1}", // Generar hash para la contraseña
+                    TimeCreated = fechaAleatoria,
+                    UrlAfiliacion = $"urldeprueba.estoesunaprueba/{i}"
                 });
             }
         }
