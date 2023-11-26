@@ -1,4 +1,10 @@
-﻿@import 'colors.css';
+
+@import '/css/colors.css';
+
+.custom-home-header {
+    background-color: var(--strong-yellow);
+    color: black;
+}
 
 .custom-header {
     background-color: var(--dark-black);
