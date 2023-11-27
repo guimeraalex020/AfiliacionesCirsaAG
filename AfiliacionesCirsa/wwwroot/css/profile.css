@@ -1,0 +1,157 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
+@import "colors.css";
+
+:root {
+    --green: #58a497;
+    --yellow: #e09449;
+    --lightgreen1: #a4bdb7;
+    --brown: #8b4448;
+    --gray: gray;
+    --lightgreen2: rgb(164, 189, 183, 0.5);
+    --box: #ededed;
+}
+
+
+/* Content-1:Start */
+.box {
+    width: 350px;
+    height: fit-content;
+    border-radius: 20px;
+    padding: 10px;
+    text-align: center;
+    background: #FFFFFF;
+}
+
+.box1 {
+    margin-top: 10px;
+}
+
+.content {
+    margin: 15px 2px;
+}
+
+.image img {
+    height: auto;
+    width: 120px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+}
+
+.level {
+    font-size: 0.7em;
+    background-color: var(--dark-yellow);
+    color: white;
+    padding: 3px;
+    border-radius: 5px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    display: block;
+    margin: 0px auto 10px;
+}
+
+.name {
+    font-size: 1.25em;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.job_title {
+    font-size: 0.65em;
+    font-weight: bolder;
+    color: gray;
+    margin-top: -2px;
+}
+
+.job_discription {
+    font-size: 0.7em;
+    color: gray;
+    margin: 10px 30px 20px;
+}
+
+.icons {
+    margin: 0px 30px;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-around;
+}
+
+    .icons button {
+        width: fit-content;
+        height: fit-content;
+        border: none;
+        font-size: 1em;
+    }
+
+ion-icon:hover {
+    color: #58a497;
+    transition: 0.5s;
+}
+
+button {
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin: 20px 30px 0px;
+    background: transparent;
+}
+
+    .button .message {
+        background: #FFFFFF;
+        border: 1px solid var(--dark-yellow);
+    }
+
+    .button .connect {
+        background-color: var(--primary-button);
+        color: #FFFFFF;
+        border: none;
+    }
+
+button.connect:hover {
+    background-color: var(--secondary-button);
+}
+
+button.message:hover {
+    background: var(--secondary-button);
+}
+/* Content-1:End */
+
+/* Responsiveness:Start */
+@media screen and (max-width: 480px) {
+    .box {
+        width: 100vw;
+        border-radius: 0px;
+    }
+
+    .button {
+        display: flex;
+        flex-direction: column;
+    }
+
+        .button button {
+            width: 250px;
+        }
+
+    button.connect {
+        margin-top: 10px;
+    }
+
+    .content2 {
+        padding: 0px 20px;
+    }
+
+        .content2 img {
+            width: 60px;
+            height: 60px;
+        }
+}
+/* Responsiveness:End */
