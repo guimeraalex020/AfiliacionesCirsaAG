@@ -35,16 +35,11 @@ namespace AfiliacionesCirsa.Services
                     EmailAddress = $"usuario{i + 1}@example.com",
                     Password = $"Password{i + 1}", // Generar hash para la contraseña
                     TimeCreated = fechaAleatoria,
-                    UrlAfiliacion = $"urldeprueba.estoesunaprueba/{i}"
-                });
+                    UrlAfiliacion = $"https://cirsa-hiring-hack-justcode.netlify.app/register-affiliate"
+                    //la url deberia llevar la ID de usuario, no la lleva por un tema de que si entramos a ese link con otra sesion ese usuario ya no existe.
+				});
             }
         }
-        /*
-        public async Task<List<UsuarioAfiliador>> GetAfiliadoresAsync()
-        {
-            await Task.Delay(5000);
-            return await Task.FromResult(ClientesAfiliados.ToList());
-        }*/
 
         public async Task<UsuarioAfiliador> GetUserByIdAsync(int user_id)
         {
@@ -73,7 +68,7 @@ namespace AfiliacionesCirsa.Services
                 NombreCompleto = fullname,
                 EmailAddress = email,
                 Password = password,
-                UrlAfiliacion = $"urldeprueba.estoesunaprueba/{ClientesAfiliados.Last().Id + 1}"
+                UrlAfiliacion = $"https://cirsa-hiring-hack-justcode.netlify.app/register-affiliate"
 			};
 
             ClientesAfiliados.Add(newUser);
