@@ -19,6 +19,7 @@
         <div class="col-12">
             <div class="titlediv">
             <!-- Contenido principal-->
+
             @if (vm.isBusy)
             {
                 <p>PENSANDO</p>
@@ -27,7 +28,7 @@
             }
             @if (vm.clientesAfiliados == null)
             {
-                <p><em>Loading...</em></p>
+                 <p><em>No tienes Clientes afiliados aun</em></p>
             }
             else if (vm.clientesAfiliados.Count == 0)
             {

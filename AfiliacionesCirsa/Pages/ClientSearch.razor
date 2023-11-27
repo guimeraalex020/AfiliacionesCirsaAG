@@ -4,6 +4,9 @@
 @using AfiliacionesCirsa.Shared.ClientSearchPage
 @inject IClienteSearchViewModel vm;
 
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
+
 <PageTitle>Client Search</PageTitle>
 <div class="row">
     <div class="col-12">
@@ -93,7 +96,15 @@
                 </div>
                 </div>
                 <div class="col-12">
-                    <ClientCarrousel Clientes="@vm.clientes"></ClientCarrousel>
+                @if (vm.isBusy)
+                {
+                    <p>pensando</p>
+                }
+                @if (vm.clientes.Count() == 0)
+                {
+                    <p>No tienes ninguna afiliación disponible</p>
+                }
+                <ClientCarrousel Clientes="@vm.clientes"></ClientCarrousel>
                 </div>
             
             </div>

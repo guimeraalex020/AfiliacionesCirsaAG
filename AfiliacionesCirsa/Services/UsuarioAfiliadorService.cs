@@ -72,8 +72,9 @@ namespace AfiliacionesCirsa.Services
                 Id = ClientesAfiliados.Last().Id + 1,
                 NombreCompleto = fullname,
                 EmailAddress = email,
-                Password = password
-            };
+                Password = password,
+                UrlAfiliacion = $"urldeprueba.estoesunaprueba/{ClientesAfiliados.Last().Id + 1}"
+			};
 
             ClientesAfiliados.Add(newUser);
         }

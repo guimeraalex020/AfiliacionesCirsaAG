@@ -1,7 +1,7 @@
 ﻿
 @page "/register-affiliate"
 @using AfiliacionesCirsa.ViewModels
-@inject IRegisterViewModel vm;
+@inject IRegisterAfiliadosViewModel vm;
 
 <!doctype html>
 <html lang="en">
@@ -100,7 +100,7 @@
 		}
 		else
 		{
-			vm.Register();
+			vm.RegisterAfiliados();
 			passwordMismatchError = "";
 		}
 	}

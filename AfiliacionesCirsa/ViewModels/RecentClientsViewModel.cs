@@ -39,8 +39,11 @@ namespace AfiliacionesCirsa.ViewModels
             if (_authService.user_id.HasValue)
             {
                 var clientes = await (_clienteAfiliadoService.GetAfiliadosByAfiliadorIdAsync(_authService.user_id.Value));
+                if (clientes.Count() > 10){ 
                 clientesAfiliados = clientes.GetRange(0,10);
-            }
+				}
+                
+			}
             else
             {
                 throw new NullReferenceException("User id on auth service is null");

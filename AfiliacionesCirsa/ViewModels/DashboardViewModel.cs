@@ -49,10 +49,12 @@ namespace AfiliacionesCirsa.ViewModels
                 var clientesList = await _clienteAfiliadoService.GetAfiliadosByAfiliadorIdAsync(_authService.user_id.Value);
                 var me = await _usuarioAfiliadorService.GetUserByIdAsync(_authService.user_id.Value);
                 var sumaTotalSpent = clientesList.Sum(cliente => cliente.TotalSpent);
-                total_money = sumaTotalSpent;
-                average_money = sumaTotalSpent / (CalcularMesesHastaHoy(me.TimeCreated));
+                var monthsUntilToday = (CalcularMesesHastaHoy(me.TimeCreated));
+
+				total_money = sumaTotalSpent;
+                average_money =  monthsUntilToday == 0 ? 0 : sumaTotalSpent / monthsUntilToday;
                 total_clients = clientesList.Count();
-                average_clients = clientesList.Count() / (CalcularMesesHastaHoy(me.TimeCreated));
+                average_clients = monthsUntilToday == 0 ? 0 : clientesList.Count() / monthsUntilToday;
                 url_afiliacion = me.UrlAfiliacion;
             }
             else

@@ -60,3 +60,39 @@
 .black-text {
     color: black !important;
 }
+
+
+/* afiliados welcome */
+.animated-background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: linear-gradient(45deg, #f1bf32, #eab730);
+    animation: gradientAnimation 5s ease-in-out infinite alternate; /* Estilo de animación tipo PowerPoint 2012 */
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background: linear-gradient(45deg, #f1bf32, #eab730);
+    }
+
+    100% {
+        background: linear-gradient(45deg, #eab730, #f1bf32);
+    }
+}
+
+
+
+
+.mensaje-bienvenida {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 3em; /* Tamaño grande del texto */
+    color: black;
+}

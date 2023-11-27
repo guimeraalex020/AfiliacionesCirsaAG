@@ -32,15 +32,9 @@ namespace AfiliacionesCirsa.ViewModels
             _authService = authService;
         }
 
-        public bool isAllowed()
-        {
-            if (_authService.isLogged == true) return false;
-            else return true;
-        }
-
         public void OnInitialize()
         {
-            if (!isAllowed())
+            if (_authService.isLogged == true)
             {
                 _navManager.NavigateTo("/home");
             }
@@ -48,7 +42,7 @@ namespace AfiliacionesCirsa.ViewModels
 
         public async Task Login()
         {
-            if (isAllowed())
+            if (_authService.isLogged == false)
             {
                 isBusy = true;
                 await _authService.Login(email, password);
