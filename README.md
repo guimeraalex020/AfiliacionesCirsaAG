@@ -55,7 +55,7 @@ Cada cliente afiliado aporta una comisión monetaria al utilizar el enlace propo
 
 Hemos creado una simulación de registro para los clientes que se afilian a través del enlace. Posteriormente, los lleva a una página de bienvenida donde debería comenzar la experiencia en la web a la que el usuario afiliador está redirigiendo.
 
-### Funcionalidades Implementadas
+## Funcionalidades Implementadas
 
 - **Sistema de Autenticación:**
 Hemos implementado un sistema de autenticación simple que requiere pasar por la página de autenticación antes de acceder al menú principal. Por defecto, se crean 10 usuarios con las siguientes credenciales:
@@ -84,7 +84,7 @@ Tenemos un inicio de sesión y un registro para nuevos usuarios que deseen crear
 - **Registro de clientes afiliados**
 Hemos diseñado una pantalla simple que permite a los clientes registrarse cuando acceden al enlace del afiliado.
 
-### Arquitectura
+## Arquitectura
 Hemos empleado una arquitectura ampliamente reconocida, la MVVM (Modelo-Vista-VistaModelo). Esta estructura nos ha permitido separar de manera clara la lógica de presentación y negocios de una aplicación de la interfaz de usuario. Hemos seguido la pauta de crear la interfaz de usuario (Vista/UI), diseñar la lógica asociada a esa interfaz (ViewModel), la cual solicitará o añadirá datos al Modelo o a los servicios.
 
 Es evidente que no teníamos una base de datos, pero nuestra intención era seguir una arquitectura que nos permitiera conectarla de manera rápida y sencilla en caso de disponer de ella. Por eso, cada vez que era necesario utilizar la lógica de negocios o acceder a datos, se llamaba directamente a los servicios.
@@ -94,7 +94,7 @@ Estos servicios los hemos incorporado como "scoped", lo que implica que todo lo 
 En términos generales, esto nos permite que cada vez que se realiza una acción específica, como obtener los clientes afiliados a un usuario, se siga la misma ruta del servicio de Afiliaciones. Esto significa que, si conectáramos una base de datos, solo necesitaríamos configurar las pocas funciones de los servicios. El resto del frontend (ViewModel y View) no requeriría ninguna configuración adicional para seguir funcionando. Esta modularidad se basa en que la capa de servicio está completamente aislada. Por lo tanto, el ViewModel y la View funcionarán de la misma manera, ya sea que la capa de servicio obtenga datos de una base de datos o de una lista predeterminada.
 
 
-### Complicaciones y Soluciones
+## Complicaciones y Soluciones
 
 - **Complicación 1:** [Descripción de la complicación y cómo se abordó]
 - **Complicación 2:** [Descripción de la complicación y cómo se abordó]
