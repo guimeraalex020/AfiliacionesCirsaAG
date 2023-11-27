@@ -117,12 +117,16 @@ namespace AfiliacionesCirsa.Services
 
             return await Task.FromResult(ClientesAfiliados
             .Where(usuario =>
-                (string.IsNullOrWhiteSpace(email) || usuario.EmailAddress == email) &&
-                (string.IsNullOrWhiteSpace(name) || usuario.NombreCompleto == name) &&
+                (string.IsNullOrWhiteSpace(email) ||
+                    usuario.EmailAddress != null && usuario.EmailAddress.IndexOf(email, StringComparison.OrdinalIgnoreCase) >= 0) &&
+                (string.IsNullOrWhiteSpace(name) ||
+                    usuario.NombreCompleto != null && usuario.NombreCompleto.IndexOf(name, StringComparison.OrdinalIgnoreCase) >= 0) &&
                 (usuario.TimeCreated >= fechaComparativa))
-            .ToList());}
+            .ToList());
+        }
 
-        public async Task RegisterAfiliados(string email, string password, string fullName)
+
+            public async Task RegisterAfiliados(string email, string password, string fullName)
         {
             var newClient = new ClienteAfiliado
             {
