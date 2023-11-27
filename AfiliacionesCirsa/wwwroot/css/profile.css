@@ -90,7 +90,7 @@ ion-icon:hover {
     transition: 0.5s;
 }
 
-button {
+.button-det {
     width: 130px;
     height: 40px;
     border-radius: 10px;

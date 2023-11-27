@@ -24,15 +24,20 @@
         <div class="table-container">
             <table>
                 <tr>
-                    <td>
-                        <img class="responsive-img" src="https://img.icons8.com/external-bearicons-outline-color-bearicons/64/external-sign-up-call-to-action-bearicons-outline-color-bearicons-2.png" alt="external-sign-up-call-to-action-bearicons-outline-color-bearicons-2" />
+                    <td class="new-td">
+                        <img style="margin-left: 10px !important;" class="responsive-img" src="https://img.icons8.com/external-bearicons-outline-color-bearicons/64/external-sign-up-call-to-action-bearicons-outline-color-bearicons-2.png" alt="external-sign-up-call-to-action-bearicons-outline-color-bearicons-2" />
                     </td>
-                    <td>
+                    <td class="new-td">
                         <img class="responsive-img" src="https://img.icons8.com/external-flatarticons-blue-flatarticons/65/000000/external-recommend-seo-flatarticons-blue-flatarticons.png" alt="external-recommend-seo-flatarticons-blue-flatarticons" />
                     </td>
-                    <td>
+                    <td class="new-td">
                         <img class="responsive-img" src="https://img.icons8.com/external-microdots-premium-microdot-graphic/64/external-earn-business-finance-vol1-microdots-premium-microdot-graphic.png" alt="external-earn-business-finance-vol1-microdots-premium-microdot-graphic" />
                     </td>
+                </tr>
+                <tr>
+                    <th class="new-th">Title 1</th>
+                    <th class="new-th">Title 2</th>
+                    <th class="new-th">Title 3</th>
                 </tr>
                 <tr>
                     <td class="td-2">Join the ranks of countless creators, publishers, and bloggers who are maximizing their earnings through the Cirsa Affiliates Program.</td>
@@ -92,33 +97,41 @@
 
         .explanation-container {
             width: 80%;
-            margin-top: 175px !important;
+            margin-top: 100px !important;
             margin: auto;
             text-align: left;
         }
 
         .table-container {
             width: 80%;
-            margin-top: 175px !important;
+            margin-top: 100px !important;
             margin: auto;
-            overflow-x: auto; /* Añadido para manejar barras de desplazamiento horizontal si es necesario */
+            overflow-x: auto;
         }
 
         table {
             width: 100%;
-            border-radius: 10px; /* Bordes redondeados */
+            border-radius: 10px;
+            border-collapse: separate;
+            border-spacing: 10px; /* Añadido para manejar espaciado entre celdas */
         }
 
         th, td {
-            border: 1px solid #ddd;
+            border: 0px solid #ddd;
             padding: 8px;
-            border-radius: 8px; /* Bordes redondeados en las celdas */
-            background-color: #f2f2f2; /* Color de fondo */
-            border-collapse: separate;
-            border-spacing: 10px;
+            border-radius: 8px;
+            background-color: #f2f2f2;
         }
 
-        
+        .new-td {
+            padding: 8px;
+            background-color: transparent !important;
+        }
+
+        .new-th {
+            padding: 8px;
+            background-color: transparent !important;
+        }
 
         .responsive-img {
             width: 20%;
@@ -131,9 +144,10 @@
             text-align: justify !important;
         }
 
+
+
         .card-container {
             width: 100%;
-            margin-top: 75px !important;
             margin: auto;
         }
 

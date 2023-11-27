@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\homepage.css" />
     <Content Remove="wwwroot\StyleSheet.css" />
   </ItemGroup>
 
