@@ -35,9 +35,14 @@ En el desarrollo de CIRSA HIRING HACK - justCode, hemos utilizado las siguientes
 
 Durante el desarrollo, tomamos varias decisiones para optimizar el rendimiento y la experiencia del usuario. Algunas de las decisiones clave incluyen:
 
-- **Uso de Blazor:** Se eligió Blazor debido al reto proporcionado por NUWE y CIRSA.
-- **Librerías Frontend:** Optamos por integrar las librerías Bulma, Bootstrap y Radzen para aprovechar sus características y facilitar tanto el diseño como la interactividad de la plataforma. Además, la elección de estas librerías también está respaldada por consideraciones de seguridad para el usuario. Al utilizar estas bibliotecas, reducimos la posibilidad de introducir fallos de seguridad que podrían ocurrir si implementamos ciertas funcionalidades manualmente.
-- **Arquitectura MVVM** Escogimos esta arquitectura debido a su escalabilidad y seguridad.
+- **Uso de Blazor:** 
+Se eligió Blazor debido al reto proporcionado por NUWE y CIRSA.
+- **Librerías Frontend:** 
+Optamos por integrar las librerías Bulma, Bootstrap y Radzen para aprovechar sus características y facilitar tanto el diseño como la interactividad de la plataforma. Además, la elección de estas librerías también está respaldada por consideraciones de seguridad para el usuario. Al utilizar estas bibliotecas, reducimos la posibilidad de introducir fallos de seguridad que podrían ocurrir si implementamos ciertas funcionalidades manualmente.
+- **Arquitectura MVVM:** 
+Escogimos esta arquitectura debido a su escalabilidad y seguridad.
+
+
 ## Participantes
 
 Ambos participantes contribuyeron al desarrollo de las diferentes páginas del proyecto. Sin embargo, se pueden diferenciar por:
