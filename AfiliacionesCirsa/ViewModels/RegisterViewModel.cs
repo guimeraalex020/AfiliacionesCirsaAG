@@ -34,23 +34,18 @@ namespace AfiliacionesCirsa.ViewModels
             _authService = authService;
         }
 
-        public bool isAllowed()
-        {
-            if (_authService.isLogged == true) return false;
-            else return true;
-        }
 
-        public void OnInitialize()
-        {
-            if (!isAllowed())
-            {
-                _navManager.NavigateTo("/home");
-            }
-        }
+		public void OnInitialize()
+		{
+			if (_authService.isLogged == true)
+			{
+				_navManager.NavigateTo("/home");
+			}
+		}
 
-        public async Task Register()
+		public async Task Register()
         {
-            if (isAllowed())
+            if (_authService.isLogged == false)
             {
                 isBusy = true;
                 await _authService.Register(email, password, fullName);

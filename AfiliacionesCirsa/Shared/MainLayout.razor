@@ -32,18 +32,15 @@
     <RadzenSidebar @bind-Expanded="@sidebar1Expanded">
         <RadzenPanelMenu>
                 
-                <RadzenPanelMenuItem Click="@(()=>navManager.NavigateTo("/home"))" Path="/home" Text="Home" Icon="Home" />
-                <RadzenPanelMenuItem Click="@(()=>navManager.NavigateTo("/settings"))" Path="/settings" Text="Settings" Icon="settings" />
+                <RadzenPanelMenuItem Click="@(()=>navManager.NavigateTo("/home"))" Path="/home" Text="Dashboard" Icon="home" />
+                <RadzenPanelMenuItem Click="@(()=>navManager.NavigateTo("/settings"))" Path="/settings" Text="Configuración" Icon="settings" />
                 <RadzenPanelMenuItem Click="@(()=>navManager.NavigateTo("/clientsearch"))" Path="/clientsearch" Text="Buscador de Afiliados" Icon="person_search" />
-                <RadzenPanelMenuItem Click="@(()=>navManager.NavigateTo("/clientTable"))" Path="/clientTable" Text="Tablas afiliados" Icon="table_rows" />
+                <RadzenPanelMenuItem Click="@(()=>navManager.NavigateTo("/clientTable"))" Path="/clientTable" Text="Ultimas Afiliaciones" Icon="replay" />
         </RadzenPanelMenu>
     </RadzenSidebar>
     <RadzenBody>
             @Body
     </RadzenBody>
-    <RadzenFooter>
-        Footer
-    </RadzenFooter>
 </RadzenLayout>
 
 @code {

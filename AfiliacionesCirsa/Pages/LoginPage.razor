@@ -86,6 +86,10 @@
 @code {
 	private LoginModel loginModel = new LoginModel();
 
+	protected override void OnInitialized()
+	{
+		vm.OnInitialize();
+	}
 	private void HandleValidSubmit()
 	{
 		vm.Login();

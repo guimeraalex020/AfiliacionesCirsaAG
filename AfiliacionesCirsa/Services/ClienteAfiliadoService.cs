@@ -28,7 +28,7 @@ namespace AfiliacionesCirsa.Services
             DateTime fechaActual = DateTime.Now;
             DateTime fechaMinima = fechaActual.AddYears(-2); // Hace dos años a partir de hoy
 
-            for (int i = 0; i < 10000; i++)
+            for (int i = 0; i < 1000; i++)
             {
                 int diasAleatorios = random.Next((fechaActual - fechaMinima).Days); // Rango de días entre hace dos años y hoy
                 DateTime fechaAleatoria = fechaActual.AddDays(-diasAleatorios); // Fecha aleatoria dentro del rango
@@ -36,8 +36,8 @@ namespace AfiliacionesCirsa.Services
                 ClientesAfiliados.Add(new ClienteAfiliado
                 {
                     Id = i,
-                    NombreCompleto = $"Usuario {i + 1}",
-                    EmailAddress = $"usuario{i + 1}@example.com",
+                    NombreCompleto = $"Cliente {i + 1}",
+                    EmailAddress = $"cliente{i + 1}@example.com",
                     Password = $"Password{i + 1}", // Generar hash para la contraseña,
                     Afiliador_id = random.Next(0, 10),
                     TotalSpent = random.Next(0, 30),
@@ -120,13 +120,19 @@ namespace AfiliacionesCirsa.Services
                 (string.IsNullOrWhiteSpace(email) || usuario.EmailAddress == email) &&
                 (string.IsNullOrWhiteSpace(name) || usuario.NombreCompleto == name) &&
                 (usuario.TimeCreated >= fechaComparativa))
-            .ToList());
+            .ToList());}
 
-            return await Task.FromResult(ClientesAfiliados
-            .Where(usuario =>
-                usuario.EmailAddress == email ||
-                usuario.NombreCompleto == name)
-            .ToList());
-                }
+        public async Task RegisterAfiliados(string email, string password, string fullName)
+        {
+            var newClient = new ClienteAfiliado
+            {
+                Id = ClientesAfiliados.Last().Id + 1,
+                NombreCompleto = fullName,
+                EmailAddress = email,
+                Password = password
+            };
+
+            ClientesAfiliados.Add(newClient);
+        }
     }
 }
