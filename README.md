@@ -94,12 +94,3 @@ Estos servicios los hemos incorporado como "scoped", lo que implica que todo lo 
 En términos generales, esto nos permite que cada vez que se realiza una acción específica, como obtener los clientes afiliados a un usuario, se siga la misma ruta del servicio de Afiliaciones. Esto significa que, si conectáramos una base de datos, solo necesitaríamos configurar las pocas funciones de los servicios. El resto del frontend (ViewModel y View) no requeriría ninguna configuración adicional para seguir funcionando. Esta modularidad se basa en que la capa de servicio está completamente aislada. Por lo tanto, el ViewModel y la View funcionarán de la misma manera, ya sea que la capa de servicio obtenga datos de una base de datos o de una lista predeterminada.
 
 
-## Complicaciones y Soluciones
-
-- **Complicación 1:** [Descripción de la complicación y cómo se abordó]
-- **Complicación 2:** [Descripción de la complicación y cómo se abordó]
-- ...
-
-## Licencia
-
-Este proyecto está bajo la Licencia [Nombre de la Licencia]. Consulta el archivo `LICENSE` para obtener más detalles.
