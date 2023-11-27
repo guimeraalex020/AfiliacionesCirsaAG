@@ -47,19 +47,24 @@
 
 .yellowbox {
     background-color: #f1bf32 !important;
+    height: 100%;
 }
 .redbox {
     background-color: #d4a52d !important;
+    height: 100%;
 }
 .greenbox {
     background-color: #aa8128 !important;
+    height: 100%;
 }
 .bluebox {
     background-color: #949596 !important;
+    height: 100%;
 }
 .black-text {
     color: black !important;
 }
+
 
 
 /* afiliados welcome */
