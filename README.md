@@ -25,7 +25,7 @@ Asegúrate de tener instaladas las siguientes herramientas antes de ejecutar la 
 
 En el desarrollo de CIRSA HIRING HACK - justCode, hemos utilizado las siguientes tecnologías y herramientas:
 
-- Blazor (versión X.X)
+- Blazor
 - HTML, CSS
 - Bulma
 - Bootstrap
@@ -63,16 +63,23 @@ En esta sección, proporcionaré detalles específicos sobre el desarrollo del p
 
 ### Funcionalidades Implementadas
 
-- Hemos implementado un simple sistema de autenticacion que nos obliga a pasar por la pagina de autenticacion antes de poder entrar al menu principal, por defecto se crean 10 usuarios del tipo:
-email = usuario[1..9]@example.com
-contraseña = Password[1..9]
-ejemplo: usuario1@example.com | Password1
+- Sistema de Autenticación:
+Hemos implementado un sistema de autenticación simple que requiere pasar por la página de autenticación antes de acceder al menú principal. Por defecto, se crean 10 usuarios con las siguientes credenciales:
 
-Estos usuarios ya tienen predefinidos unos clientes afiliados y por lo tanto es mas facil poder probar el frontend ya que tenemos datos que usar. En caso de usar el sign up tambien funcionara pero no tendremos clientes afiliados que mostrar.
+Email: usuario[1..9]@example.com
+Contraseña: Password[1..9]
+Ejemplo: usuario1@example.com | Password1
 
-- Dashboard o pagina principal, en esta pagina podemos ver estadisticas generales de los beneficios del usuario, clientes afiliados en el ultimo tiempo, media de afiliacion mensual des del registro en la plataforma, etc.
+Estos usuarios ya tienen clientes afiliados predefinidos, lo que facilita la prueba del frontend al tener datos disponibles. Si se utiliza el registro (sign up), funcionará, pero no habrá clientes afiliados asociados para mostrar.
 
-- 
+- Dashboard o Página Principal:
+En esta sección, se muestran estadísticas generales relacionadas con los beneficios del usuario. Incluye el total de clientes afiliados, la media de clientes afiliados al mes, la comisión total ganada y la media de comisión mensual. También se genera tu URL de afiliado que puedes copiar y enviar a posibles clientes.
+
+- Buscador de Afiliados:
+Permite buscar y filtrar los afiliados por nombre completo, correo electrónico y fecha de afiliación.
+
+- Últimas Afiliaciones:
+Aquí se detallan las últimas 10 afiliaciones, proporcionando una visión detallada de las más recientes.
 
 ### Arquitectura
 Hemos empleado una arquitectura ampliamente reconocida, la MVVM (Modelo-Vista-VistaModelo). Esta estructura nos ha permitido separar de manera clara la lógica de presentación y negocios de una aplicación de la interfaz de usuario. Hemos seguido la pauta de crear la interfaz de usuario (Vista/UI), diseñar la lógica asociada a esa interfaz (ViewModel), la cual solicitará o añadirá datos al Modelo o a los servicios.
