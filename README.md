@@ -37,7 +37,7 @@ Durante el desarrollo, tomamos varias decisiones para optimizar el rendimiento y
 
 - **Uso de Blazor:** Se eligió Blazor debido al reto proporcionado por NUWE y CIRSA.
 - **Librerías Frontend:** Optamos por integrar las librerías Bulma, Bootstrap y Radzen para aprovechar sus características y facilitar tanto el diseño como la interactividad de la plataforma. Además, la elección de estas librerías también está respaldada por consideraciones de seguridad para el usuario. Al utilizar estas bibliotecas, reducimos la posibilidad de introducir fallos de seguridad que podrían ocurrir si implementamos ciertas funcionalidades manualmente.
-
+- **Arquitectura MVVM** Escogimos esta arquitectura debido a su escalabilidad y seguridad.
 ## Participantes
 
 Ambos participantes contribuyeron al desarrollo de las diferentes páginas del proyecto. Sin embargo, se pueden diferenciar por:
@@ -90,12 +90,6 @@ Estos servicios los hemos incorporado como "scoped", lo que implica que todo lo 
 
 En términos generales, esto nos permite que cada vez que se realiza una acción específica, como obtener los clientes afiliados a un usuario, se siga la misma ruta del servicio de Afiliaciones. Esto significa que, si conectáramos una base de datos, solo necesitaríamos configurar las pocas funciones de los servicios. El resto del frontend (ViewModel y View) no requeriría ninguna configuración adicional para seguir funcionando. Esta modularidad se basa en que la capa de servicio está completamente aislada. Por lo tanto, el ViewModel y la View funcionarán de la misma manera, ya sea que la capa de servicio obtenga datos de una base de datos o de una lista predeterminada.
 
-### Decisiones Técnicas
-
-- **MVVM** Escogimos esta arquitectura debido a su escalabilidad y seguridad.
-- **Radzen** Crear componentes no siempre es fácil; esta solución nos permitía importar los más difíciles y posteriormente personalizarlos.
-- **Bulma** Cuando teníamos que programar manualmente, Bulma nos ofrecía una amplia gama de estándares para inputs, selectores y títulos, lo que facilitaba enormemente su implementación y resultaba intuitivo. De esta manera, la página web siempre presentaba visualmente los mismos componentes, lo que hacía más sencillo para el usuario interactuar con ella.
-- **Bootstrap** Similar a Bulma, pero especialmente útil por sus grids y el Responsive.
 
 ### Complicaciones y Soluciones
 
