@@ -57,7 +57,7 @@ Además, nos propusimos crear una plataforma minimalista, responsive y sencilla 
 
 Por otro lado, otro de nuestros objetivos fundamentales fue considerar que el frontend no opera aislado. Por ello, hemos diseñado y programado siempre teniendo en mente una posible integración con el backend. Nos centramos en seguir arquitecturas populares y proponer soluciones modulares y escalables, permitiendo una implementación coherente y adaptable a distintos contextos y futuras necesidades.
 
-##Contexto
+## Contexto
 Nuestra plataforma de afiliación se enfoca en permitir que los usuarios que realizan afiliaciones a través de enlaces compartidos puedan monitorear sus conexiones de afiliación. A los clientes que se unen mediante estos enlaces los denominamos "clientes afiliados". Sin embargo, estos clientes no tienen acceso a nuestra plataforma, ya que esta está exclusivamente diseñada para el uso de los afiliadores.
 
 Cada cliente afiliado aporta una comisión monetaria al utilizar el enlace proporcionado por el afiliador para acceder. Esta es la razón por la cual hacemos mención a la comisión monetaria al referirnos a los clientes afiliados.
@@ -68,7 +68,7 @@ En esta sección, proporcionaré detalles específicos sobre el desarrollo del p
 
 ### Funcionalidades Implementadas
 
-- Sistema de Autenticación:
+- **Sistema de Autenticación:**
 Hemos implementado un sistema de autenticación simple que requiere pasar por la página de autenticación antes de acceder al menú principal. Por defecto, se crean 10 usuarios con las siguientes credenciales:
 
 Email: usuario[1..9]@example.com
@@ -77,13 +77,13 @@ Ejemplo: usuario1@example.com | Password1
 
 Estos usuarios ya tienen clientes afiliados predefinidos, lo que facilita la prueba del frontend al tener datos disponibles. Si se utiliza el registro (sign up), funcionará, pero no habrá clientes afiliados asociados para mostrar.
 
-- Dashboard o Página Principal:
+- **Dashboard o Página Principal:**
 En esta sección, se muestran estadísticas generales relacionadas con los beneficios del usuario. Incluye el total de clientes afiliados, la media de clientes afiliados al mes, la comisión total ganada y la media de comisión mensual. También se genera tu URL de afiliado que puedes copiar y enviar a posibles clientes.
 
-- Buscador de Afiliados:
+- **Buscador de Afiliados:**
 Permite buscar y filtrar los afiliados por nombre completo, correo electrónico y fecha de afiliación.
 
-- Últimas Afiliaciones:
+- **Últimas Afiliaciones:**
 Aquí se detallan las últimas 10 afiliaciones, proporcionando una visión detallada de las más recientes.
 
 ### Arquitectura
