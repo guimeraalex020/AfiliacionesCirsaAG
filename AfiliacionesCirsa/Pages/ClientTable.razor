@@ -42,6 +42,7 @@
                             <th>NombreCompleto</th>
                             <th>EmailAddress</th>
                             <th>Fecha Afiliacion</th>
+                            <th>Comisión</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -52,8 +53,9 @@
                                 <td>@cliente.NombreCompleto</td>
                                 <td>@cliente.EmailAddress</td>
                                 <td>@cliente.TimeCreated</td>
+                                <td>@cliente.TotalSpent €</td>
                                 <td>
-                                        <button class="button yellowbutton" @onclick="() => vm.verDetalle(3)">Visualizar</button>
+                                        <button class="button yellowbutton" >Visualizar</button>
                                 </td>
                             </tr>
                         }
