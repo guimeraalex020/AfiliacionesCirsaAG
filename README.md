@@ -2,24 +2,15 @@
 
 ## Background del Proyecto
 
-El proyecto CIRSA HIRING HACK - justCode tiene como objetivo proporcionar una posible plataforma web de afiliados para CIRSA. Surgió como respuesta a un reto planteado por NUWE en colaboración con CIRSA.
+El proyecto CIRSA HIRING HACK - justCode tiene como objetivo proporcionar una plataforma web de afiliados para CIRSA. Surgió como respuesta a un reto planteado por NUWE en colaboración con CIRSA.
 
 ## Uso
 
 Para utilizar CIRSA HIRING HACK - justCode, sigue estos pasos simples:
 
-1. Clona este repositorio: `git clone ...`
-2. Navega al directorio del proyecto: `cd turepositorio`
-3. Abre la solución con Visual Studio o tu entorno de desarrollo preferido.
-4. Ejecuta la aplicación y accede a [URL local].
-
-## Instalación
-
-Asegúrate de tener instaladas las siguientes herramientas antes de ejecutar la aplicación:
-
-- [Nombre de la herramienta 1]
-- [Nombre de la herramienta 2]
-- ...
+1. Accede a nuestra página web: https://cirsa-hiring-hack-justcode.netlify.app/
+2. Inicia sesión con una de nuestras cuentas predeterminadas para ver datos en pantalla, o regístrate y crea tu propia cuenta (Si eliges esta opción, la cuenta estará vacía ya que es nueva).
+3. Explora las distintas pantallas, prueba a filtrar usuarios, consulta tus estadísticas, mira tu perfil, etc.
 
 ## Stack Utilizado
 
@@ -62,9 +53,7 @@ Nuestra plataforma de afiliación se enfoca en permitir que los usuarios que rea
 
 Cada cliente afiliado aporta una comisión monetaria al utilizar el enlace proporcionado por el afiliador para acceder. Esta es la razón por la cual hacemos mención a la comisión monetaria al referirnos a los clientes afiliados.
 
-## Detalles de Desarrollo
-
-En esta sección, proporcionaré detalles específicos sobre el desarrollo del proyecto, destacando aspectos como las funcionalidades implementadas, la arquitectura, las decisiones técnicas y cualquier complicación que haya surgido durante el proceso.
+Hemos creado una simulación de registro para los clientes que se afilian a través del enlace. Posteriormente, los lleva a una página de bienvenida donde debería comenzar la experiencia en la web a la que el usuario afiliador está redirigiendo.
 
 ### Funcionalidades Implementadas
 
@@ -85,6 +74,15 @@ Permite buscar y filtrar los afiliados por nombre completo, correo electrónico 
 
 - **Últimas Afiliaciones:**
 Aquí se detallan las últimas 10 afiliaciones, proporcionando una visión detallada de las más recientes.
+
+- **Configuración**
+Aquí podemos ver el perfil del usuario. En el futuro, podrían haber opciones de configuración y preferencias disponibles.
+
+- **Login y registro de usuarios nuevos**
+Tenemos un inicio de sesión y un registro para nuevos usuarios que deseen crear afiliaciones compartiendo su URL.
+
+- **Registro de clientes afiliados**
+Hemos diseñado una pantalla simple que permite a los clientes registrarse cuando acceden al enlace del afiliado.
 
 ### Arquitectura
 Hemos empleado una arquitectura ampliamente reconocida, la MVVM (Modelo-Vista-VistaModelo). Esta estructura nos ha permitido separar de manera clara la lógica de presentación y negocios de una aplicación de la interfaz de usuario. Hemos seguido la pauta de crear la interfaz de usuario (Vista/UI), diseñar la lógica asociada a esa interfaz (ViewModel), la cual solicitará o añadirá datos al Modelo o a los servicios.
