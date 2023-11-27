@@ -48,7 +48,7 @@ Es importante destacar que, a pesar de estas diferencias, ambos miembros realiza
 ## Objetivos
 Nuestro principal objetivo fue desarrollar una plataforma de afiliaciones siguiendo las directrices establecidas por Nuwe. Para lograrlo, hemos integrado todas las pantallas requeridas, además de añadir algunas adicionales que consideramos útiles para mejorar la comodidad y funcionalidad de la plataforma.
 
-Además, nos propusimos crear una plataforma minimalista y sencilla para el usuario, manteniendo la alineación con las directrices de Nuwe. Nuestro enfoque estuvo en garantizar una comprensión perfecta de su funcionamiento, asegurándonos de incluir todas las funcionalidades necesarias para un óptimo rendimiento. Junto con cumplir con los lineamientos establecidos, nos dedicamos a ofrecer una experiencia intuitiva y completa para el usuario, donde la simplicidad y la comprensión fueran elementos esenciales de la plataforma.
+Además, nos propusimos crear una plataforma minimalista, responsive y sencilla para el usuario, manteniendo la alineación con las directrices de Nuwe. Nuestro enfoque estuvo en garantizar una comprensión perfecta de su funcionamiento, asegurándonos de incluir todas las funcionalidades necesarias para un óptimo rendimiento. Junto con cumplir con los lineamientos establecidos, nos dedicamos a ofrecer una experiencia intuitiva y completa para el usuario, donde la simplicidad y la comprensión fueran elementos esenciales de la plataforma.
 
 Por otro lado, otro de nuestros objetivos fundamentales fue considerar que el frontend no opera aislado. Por ello, hemos diseñado y programado siempre teniendo en mente una posible integración con el backend. Nos centramos en seguir arquitecturas populares y proponer soluciones modulares y escalables, permitiendo una implementación coherente y adaptable a distintos contextos y futuras necesidades.
 
@@ -85,9 +85,10 @@ En términos generales, esto nos permite que cada vez que se realiza una acción
 
 ### Decisiones Técnicas
 
-- **Decisión 1:** [Explicación y razón]
-- **Decisión 2:** [Explicación y razón]
-- ...
+- **MVVM** Escogimos esta arquitectura debido a su escalabilidad y seguridad.
+- **Radzen** Crear componentes no siempre es fácil; esta solución nos permitía importar los más difíciles y posteriormente personalizarlos.
+- **Bulma** Cuando teníamos que programar manualmente, Bulma nos ofrecía una amplia gama de estándares para inputs, selectores y títulos, lo que facilitaba enormemente su implementación y resultaba intuitivo. De esta manera, la página web siempre presentaba visualmente los mismos componentes, lo que hacía más sencillo para el usuario interactuar con ella.
+- **Bootstrap** Similar a Bulma, pero especialmente útil por sus grids y el Responsive.
 
 ### Complicaciones y Soluciones
 
