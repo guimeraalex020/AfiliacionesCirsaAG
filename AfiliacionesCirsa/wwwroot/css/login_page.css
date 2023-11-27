@@ -8169,8 +8169,19 @@ h1, h2, h3, h4, h5,
   background: #e3b04b !important; }
 
 .ftco-section {
-    padding: 7em 0;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100vh; /* Establecer la altura al 100% del viewport height */
+    padding: 7em 0; /* Eliminar el padding en general */
+    /* Otros estilos que puedas tener */
+}
+
+@media (max-width: 767px) {
+    .ftco-section {
+        height: auto; /* Revertir la altura al valor automático */
+        padding-top: 2em; /* Añadir un espacio en la parte superior en dispositivos móviles */
+    }
 }
 
 .ftco-no-pt {
